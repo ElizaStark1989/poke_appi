@@ -1,0 +1,23 @@
+.home_page {
+    position: relative;
+    width: 50%;
+    top: 25em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title_home_page {
+    text-align: center;
+}
+.hi_page {
+    text-align: center;
+}
+.hi_page_2 {
+    text-align: center;
+}
+.form_page {
+    align-items: center;
+}
+.card_img {
+    
+
+}

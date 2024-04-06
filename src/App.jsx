@@ -4,8 +4,11 @@ import HomePage from './pages/HomePage';
 import PokeDetailPage from './pages/PokeDetailPage';
 import PokedexPage from './pages/PokedexPage';
 import ProtectedRoutes from './pages/ProtectedRoutes';
+import './index.css';
 
 function App() {
+
+  
 
 
   return (
@@ -22,3 +25,4 @@ function App() {
 }
 
 export default App;
+
