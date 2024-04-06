@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
-
+import '../PokedexPage/style/pokeCard.css';
 
  const PokeCard = ({ pokeInfo }) => {
  
@@ -18,28 +18,28 @@ import { useNavigate } from "react-router-dom";
 };
  
     return (
-        <articule onClick={handlePokeDetail}>
-            <header>
-                <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        <articule className= {`card border-${pokemon?.types[0].type.name}`}  onClick={handlePokeDetail}>
+            <header  className={`card_header bg-${pokemon?.types[0].type.name}`}>
+                <img  className="card_img" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
             </header>
-            <section>
-                <h3>{pokemon?.name}</h3>
-                <ul>
+            <section className="card_principal" >
+                <h3 className= {`card_name color-${pokemon?.types[0].type.name}`}>{pokemon?.name}</h3>
+                <ul className="card_types" >
                     {
                         pokemon?.types.map(typeInfo => (
-                            <li key={typeInfo.type.url}>{typeInfo.type.name}</li>
+                            <li className="card_type" key={typeInfo.type.url}>{typeInfo.type.name}</li>
                         ))
                     }
                 </ul>
             </section>
-            <hr />
-            <section>
-                <ul>
+            <hr className="card_hr" />
+            <section className="card_stats" >
+                <ul className="card_list" >
                     {
                         pokemon?.stats.map(statInfo => (
-                            <li key={statInfo.stat.url}>
-                                <span>{statInfo.stat.name}</span>
-                                <span>{statInfo.base_stat}</span>
+                            <li className="card_stat"  key={statInfo.stat.url}>
+                                <span className="card_stat_label" >{statInfo.stat.name}</span>
+                                <span className={`card_stat_value color-${pokemon?.types[0].type.name}`} >{statInfo.base_stat}</span>
                             </li>
                         ))
                     }

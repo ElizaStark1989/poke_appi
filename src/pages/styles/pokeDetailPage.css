@@ -1,0 +1,62 @@
+.card_detail {
+    width: 100%;
+    max-width: 50em;
+    border: 8px solid;
+    border-radius: 0.8em;
+    font-size: 1rem;
+    margin-left: 20;   
+}
+.uni_header{
+    background-color: aqua;
+    width: 100%;
+    position: relative;
+    border-radius: 10px 10px 10px 10px;
+}
+.uni_img {
+    position: relative;
+    width: 50%;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card_name_detail {
+    text-align: center;
+    margin-top: 60px;
+    font-size: xx-large;
+}
+.type_detail {
+    display: flex;
+    justify-content:space-around;
+    margin-top: 5%;
+}
+.type_title {
+    justify-content: center;
+    font-size: large;
+}
+.stats{
+    margin-top: 2em;
+}
+.stats_title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+.skill_ul{
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-types);
+    --gap-types:0.7em
+}
+.ul_stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.5em;
+}
+.li_stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items:center;
+}
