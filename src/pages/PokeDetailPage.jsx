@@ -31,21 +31,21 @@ const PokeDetailPage = () => {
       </h2>
 
       <div className="type_detail">
-        <div>
+        <div className='types_detail' >
           <h3 className="type_title">Type</h3>
           <ul className="type_ul">
             {pokemon?.types.map((type, index) => (
-              <li key={index}>{type.type.name}</li>
+              <li className='li_type' key={index}>{type.type.name}</li>
             ))}
           </ul>
         </div>
         <br></br>
-        <div>
-          <h3 className="skill_tittle">Skills</h3>
+        <div className='skills_detail' >
+          <h3 className="skill_title">Skills</h3>
           <div>
-            <ul className="">
+            <ul className="ul_skills">
               {pokemon?.abilities.map((ability, index) => (
-                <li key={index}>{ability.ability.name}</li>
+                <li  className='skill_li' key={index}>{ability.ability.name}</li>
               ))}
             </ul>
           </div>

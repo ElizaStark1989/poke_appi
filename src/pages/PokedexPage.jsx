@@ -60,7 +60,7 @@ const PokedexPage = () => {
   return (
     <div className="pokedex_container">
       <img
-        src="/BANNER-26-POKEMON-1920X700-1170x427.jpg"
+        src="/pokemon3.jpg"
         alt="Pokemon Banner"
         className="banner_image"
       />
