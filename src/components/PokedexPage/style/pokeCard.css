@@ -51,7 +51,7 @@
     --margin-y: 0.8em;
     margin-top:var(--margin-y);
     margin-bottom: var(--margin-y);
-    border-top: 1px solid;
+    border-top: 1px solid rgba(128, 128, 128, 0.411);
     margin-inline: 2em;
 }
 .card_stats{
