@@ -1,6 +1,6 @@
 import FormTrainer from '../components/HomePage/FormTrainer';
 import '../pages/styles/homePage.css';
-import bannerImage from '/ask_pika.jpg';
+import bannerImage from '/poke_title.png';
 
 const HomePage = () => {
   return (
@@ -14,7 +14,9 @@ const HomePage = () => {
         To see the pokemon's information, tell me your trainer name{' '}
       </h3>
       <FormTrainer />
-    
+      <div>
+      <img className="pikachu_img" src="pikachu-pokemon.gif" alt="Banner" />
+      </div>
     </div>
   );
 };

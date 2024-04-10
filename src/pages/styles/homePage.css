@@ -1,4 +1,5 @@
 .home_page {
+  background-color: rgb(247, 247, 137);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,6 +9,9 @@
   margin: 0;
   overflow: hidden;
 }
+/*.home_page{
+  background-image:url(../../../public/pokemon4.jpg);
+}*/
 
 .title_home_page,
 .hi_page,
@@ -28,4 +32,7 @@
 }
 .hi_page{
   font-size: xx-large;
+}
+.pikachu_img{
+  margin-top: 30px;
 }
