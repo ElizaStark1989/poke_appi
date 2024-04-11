@@ -31,15 +31,42 @@ const PokedexPage = () => {
     e.preventDefault();
     const searchTerm = inputSearch.current.value.trim().toLowerCase();
 
-    const pokemonFound = pokemons?.results.find(poke =>
-      poke.name.startsWith(searchTerm),
-    );
-    if (!pokemonFound) {
-      setError(`Pokemon "${searchTerm}" not found`);
+    if (!searchTerm && typeSelected === 'allPokemons') {
+      // Si el campo de búsqueda está vacío y se ha seleccionado 'allPokemons', mostrar todos los Pokémones
+      getPokemons();
       setPokeSearch('');
-    } else {
-      setPokeSearch(pokemonFound.name);
       setError('');
+    } else {
+      const pokemonFound = pokemons?.results.find(poke =>
+        poke.name.startsWith(searchTerm),
+      );
+
+      if (!pokemonFound) {
+        setError(`Pokemon "${searchTerm}" not found`);
+        setPokeSearch('');
+      } else {
+        setPokeSearch(pokemonFound.name);
+        setError('');
+      }
+
+      if (!searchTerm && typeSelected !== 'allPokemons') {
+        getPokeByType(typeSelected);
+        setPokeSearch('');
+        setError('');
+      }
+    }
+  };
+
+  const handleTypeChange = newType => {
+    setTypeSelected(newType);
+    setPokeSearch('');
+    setError('');
+    if (newType === 'allPokemons') {
+      // Si se selecciona "All Pokemons", obtener todos los Pokémones
+      getPokemons();
+    } else {
+      // Si se selecciona otro tipo, obtener los Pokémones por ese tipo
+      getPokeByType(newType);
     }
   };
 
@@ -59,22 +86,18 @@ const PokedexPage = () => {
 
   return (
     <div className="pokedex_container">
-      <img
-        src="/pokemon3.jpg"
-        alt="Pokemon Banner"
-        className="banner_image"
-      />
+      <img src="/pokemon3.jpg" alt="Pokemon Banner" className="banner_image" />
       <div className="pokedex_header">
-        <p className='parrafo'>
-          Welcome <span className='trainer_name'>{trainer}</span>, here you can find your favorite
-          pokemon
+        <p className="parrafo">
+          Welcome <span className="trainer_name">{trainer}</span>, here you can
+          find your favorite pokemon
         </p>
         <form onSubmit={handleSubmit}>
           <input ref={inputSearch} type="text" placeholder="Search..." />
           <button type="submit">Search</button>
-          <SelectType setTypeSelected={setTypeSelected} />
+          <SelectType setTypeSelected={handleTypeChange} />
         </form>
-        {error && <p className='error_message' > {error} </p>}
+        {error && <p className="error_message">{error}</p>}
       </div>
       <div className="pokedex_content">
         <ListPokemons pokemons={currentPokemons} />
