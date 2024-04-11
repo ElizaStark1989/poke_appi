@@ -27,7 +27,7 @@ const PokeDetailPage = () => {
           alt=""
         />
       </header>
-      <h2>{pokemon?.id}</h2>
+      <h2 className={`card_id color-${pokemon?.types[0].type.name}`}>#{pokemon?.id}</h2>
       <h2 className={`card_name_detail color-${pokemon?.types[0].type.name}`}>
         {pokemon?.name}
       </h2>
