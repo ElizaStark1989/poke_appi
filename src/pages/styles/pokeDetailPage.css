@@ -26,8 +26,13 @@
 }
 .card_name_detail {
   text-align: center;
-  margin-top: 15px;
-  font-size: xx-large;
+  margin-top: none;
+  font-size: 3rem;
+}
+.card_id{
+  text-align: center;
+  padding-top: 50px;
+  font-size: 3rem;
 }
 .type_detail {
   display: flex;
